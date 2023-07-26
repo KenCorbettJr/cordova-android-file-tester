@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Android File Input Test Cases</title>
+    <meta charset="UTF-8" />
+    <link href="/src/styles.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 1em;
+      }
+
+      h2 {
+        margin-top: 1em;
+        margin-bottom: 0.3em;
+      }
+
+      ul {
+        padding-left: 1em;
+      }
+
+      .main {
+        max-width: 40em;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <h1>Android File Input Test Cases</h1>
+
+      <h2>Expected Path Cases</h2>
+
+      <h3>1. File</h3>
+      <ul>
+        <li>Display: File browser</li>
+        <li>Restrictions: no file type</li>
+        <li>File Limit: 1</li>
+      </ul>
+      <pre>&lt;input type="file" /&gt;</pre>
+      <input type="file" />
+
+      <h3>2. File - accept image</h3>
+      <ul>
+        <li>Display: File browser</li>
+        <li>Restrictions: must be an image file type</li>
+        <li>File Limit: 1</li>
+      </ul>
+      <pre>&lt;input type="file" accept="image/*" /&gt;</pre>
+      <input type="file" accept="image/*" />
+
+      <h3>3. File - cature</h3>
+      <ul>
+        <li>Display: Chooser (File or Camera)</li>
+        <li>Restrictions: no file type</li>
+        <li>File Limit: 1</li>
+      </ul>
+      <pre>&lt;input type="file" capture /&gt;</pre>
+      <input type="file" capture />
+
+      <h3>4. File - accept image and capture</h3>
+      <ul>
+        <li>Display: Chooser (File or Camera)</li>
+        <li>Restrictions: must be an image file type</li>
+        <li>File Limit: 1</li>
+      </ul>
+      <pre>&lt;input type="file" accept="image/*" capture /&gt;</pre>
+      <input type="file" accept="image/*" capture />
+
+      <h3>5. File - multiple</h3>
+      <ul>
+        <li>Display: File browser</li>
+        <li>Restrictions: no file type</li>
+        <li>File Limit: many</li>
+      </ul>
+      <pre>&lt;input type="file" multiple /&gt;</pre>
+      <input type="file" multiple />
+
+      <h3>6. File - accept image and multiple</h3>
+      <ul>
+        <li>Display: File browser</li>
+        <li>Restrictions: must be an image file type</li>
+        <li>File Limit: many</li>
+      </ul>
+      <pre>&lt;input  type="file" accept="image/*" multiple /&gt;</pre>
+      <input type="file" accept="image/*" multiple />
+
+      <h3>7. File - capture & multiple</h3>
+      <ul>
+        <li>Display: Chooser (File or Camera)</li>
+        <li>Restrictions: no file type</li>
+        <li>File Limit: many</li>
+      </ul>
+      <pre>&lt;input type="file" capture multiple /&gt;</pre>
+      <input type="file" capture multiple />
+
+      <h3>8. File - accept image, capture & multiple</h3>
+      <ul>
+        <li>Display: Chooser (File or Camera)</li>
+        <li>Restrictions: must be an image file type</li>
+        <li>File Limit: many</li>
+      </ul>
+      <pre>&lt;input type="file" accept="image/*" capture multiple /&gt;</pre>
+      <input type="file" accept="image/*" capture multiple />
+
+      <h2>Unexpected Path Cases</h2>
+      <h3>9. File - accept pdf and capture</h3>
+      <p>
+        If accept type is restrictive to a non-image format and capture flag was
+        provided.
+      </p>
+      <ul>
+        <li>Display: Chooser (File or Camera)</li>
+        <li>Restrictions: must be a PDF</li>
+        <li>File Limit: 1</li>
+      </ul>
+      <pre>&lt;input type="file" accept=".pdf" capture /&gt;</pre>
+      <input type="file" accept=".pdf" capture />
+    </div>
+  </body>
+</html>
